@@ -1,5 +1,5 @@
 from torch import nn
-from torchinfo import summary
+# from torchinfo import summary
 
 # from utilities import get_config
 
@@ -70,12 +70,3 @@ class ConvRecNet(nn.Module):
         else:
             print(f"Invalid config file: Cell = {c.cell}")
             exit()
-
-# def main():
-#     config = get_config('config-cnn-rnn.yaml')
-#     model = ConvRecNet(config.cnn_rnn)
-#     summary(model, input_size=(64, 9036))
-
-
-# if __name__ == "__main__":
-#     main()

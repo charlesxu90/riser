@@ -1,7 +1,7 @@
 from torch import nn
 import torch.nn.functional as F
 from torch.nn.utils import weight_norm
-from torchinfo import summary
+# from torchinfo import summary
 
 # from utilities import get_config
 
@@ -94,12 +94,3 @@ class TCNBot(nn.Module):
 
     def get_receptive_field(self, kernel, n_layers): 
         return 1 + 2 * sum([2**i * (kernel-1) for i in range(n_layers)])
-
-# def main():
-#     config = get_config('config-tcn-bot.yaml')
-#     model = TCNBot(config.tcnbot)
-#     summary(model, input_size=(32, 12048))
-
-
-# if __name__ == "__main__":
-#     main()

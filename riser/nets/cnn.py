@@ -1,5 +1,5 @@
 from torch import nn
-from torchinfo import summary
+# from torchinfo import summary
 
 # from utilities import get_config
 
@@ -63,13 +63,3 @@ class ConvNet(nn.Module):
                 in_channels = out_channels
         layers.append(nn.MaxPool1d(kernel_size=2, stride=2))
         return nn.Sequential(*layers)
-
-
-# def main():
-#     config = get_config('config-cnn.yaml')
-#     model = ConvNet(config.cnn)
-#     summary(model, input_size=(config.batch_size, 12048))
-
-
-# if __name__ == "__main__":
-#     main()

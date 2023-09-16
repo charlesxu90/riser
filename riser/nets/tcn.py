@@ -1,7 +1,7 @@
 from torch import nn
 import torch.nn.functional as F
 from torch.nn.utils import weight_norm
-from torchinfo import summary
+# from torchinfo import summary
 
 # from utilities import get_config
 
@@ -92,11 +92,3 @@ class TCN(nn.Module):
     def get_receptive_field(self, kernel, n_layers, dilation):
         return 1 + 2 * sum([dilation**i * (kernel-1) for i in range(n_layers)])
 
-# def main():
-#     config = get_config('local_data/configs/train-tcn-13.yaml')
-#     model = TCN(config.tcn)
-#     summary(model, input_size=(32, 12048))
-
-
-# if __name__ == "__main__":
-#     main()

@@ -1,5 +1,5 @@
 from torch import nn
-from torchinfo import summary
+# from torchinfo import summary
 
 # from utilities import get_config
 
@@ -129,13 +129,3 @@ class ResNet(nn.Module):
             elif isinstance(m, (nn.BatchNorm1d)):
                 nn.init.constant_(m.weight, 1)
                 nn.init.constant_(m.bias, 0)
-
-
-# def main():
-#     config = get_config('config-resnet.yaml')
-#     model = ResNet(config.resnet)
-#     summary(model, input_size=(64, 12048))
-
-
-# if __name__ == "__main__":
-#     main()
