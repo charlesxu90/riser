@@ -15,9 +15,7 @@ def reject_all(client, duration=0.1, throttle=0.4, batch_size=512):
         stop_receiving_reads = []
 
         # Iterate through reads in current batch
-        for i, (channel, read) in enumerate(
-            client.get_read_chunks(batch_size=batch_size, last=True),
-            start=1):
+        for i, (channel, read) in enumerate(client.get_read_chunks(batch_size=batch_size, last=True), start=1):
 
             unblock_batch_reads.append((channel, read.number))
             stop_receiving_reads.append((channel, read.number))
@@ -37,9 +35,7 @@ def reject_all(client, duration=0.1, throttle=0.4, batch_size=512):
 
 
 def main():
-    read_until_client = ReadUntilClient(filter_strands=True,
-                                        one_chunk=False)
-
+    read_until_client = ReadUntilClient(filter_strands=True, one_chunk=False)
     read_until_client.run(first_channel=1, last_channel=512)
 
     # Make sure client is running before starting analysis
